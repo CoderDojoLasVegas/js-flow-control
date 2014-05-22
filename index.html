@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+
+        <title>JavaScript Flow Control</title>
+
+        <meta name="description" content="JavaScript Flow Controls - What they are and how to use them.">
+        <meta name="author" content="Tim Thiele">
+
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <link rel="stylesheet" href="css/reveal.css">
+        <link rel="stylesheet" href="css/theme/beige.css" id="theme">
+
+        <!-- For syntax highlighting -->
+        <link rel="stylesheet" href="lib/css/zenburn.css">
+
+        <link rel="stylesheet" href="bootstrap.css">
+        <style>
+            p {
+                text-align: left !important;
+            }
+            li, button, p {
+                font-size: 20px !important;
+            }
+        </style>
+        <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+        <script>
+            if( window.location.search.match( /print-pdf/gi ) ) {
+                var link = document.createElement( 'link' );
+                link.rel = 'stylesheet';
+                link.type = 'text/css';
+                link.href = 'css/print/pdf.css';
+                document.getElementsByTagName( 'head' )[0].appendChild( link );
+            }
+        </script>
+
+        <!--[if lt IE 9]>
+        <script src="lib/js/html5shiv.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+
+        <div class="reveal">
+
+            <!-- Any section element inside of this container is displayed as a slide -->
+            <div class="slides">
+
+                <section>
+                    <h1>JavaScript Flow Controls</h1>
+                </section>
+
+                <section>
+                    
+                    <h2>What is Flow Control</h2>
+                    <p>
+                        Programs execute along a particular route or pathway, and that route can be altered based on differing conditions.  The process of evaluating conditions and altering the route of the program is called Flow Control.
+                    </p>
+                    <p>
+                        Examples of flow control in action would be sorting a list, or counting the number of Blue cars in a list of cars.  Programs that walk through a list sorting it, or make decisions based on the conditions of items in the list use flow control.  There are two basic types of flow controls, Decision types and Loop types.
+                    </p>
+
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Decision Types</h2>
+                        <p>
+                            Decision types change the flow based on a condition.  Many statements in JavaScript can evaluate conditions, but the ones we consider decision types are:
+                            <dl>
+                                <dt>if</dt>
+                                <dd>Makes a decision based on a condition</dd>
+                                <dt>if/else</dt>
+                                <dd>if/else As if, but with an alternative clause</dd>
+                                <dt>switch</dt>
+                                <dd>Multi-if statement</dd>
+                            </dl>
+                        </p>
+                    </section>
+
+                    <section>
+                        <h2>Loop Types</h2>
+                        <p>
+                            Statements that continuously evaluate until a particular condition or conditions are met are considered loop types.  Loop types include:
+                            <dl>
+                                <dt>for</dt>
+                                <dd>An iterative loop</dd>
+                                <dt>for/in</dt>
+                                <dd>Iterates through the properties of an object</dd>
+                                <dt>while</dt>
+                                <dd>Performs code while a condition is true</dd>
+                                <dt>do/while</dt>
+                                <dd>Performs code, then checks for the condition being true</dd>
+                                <dt>break</dt>
+                                <dd>Stops execution of a loop</dd>
+                                <dt>continue</dt>
+                                <dd>Skips remaining iteration of a loop</dd>
+                            </dl>
+                        </p>
+                    </section>
+                </section>
+
+                <section><!-- Examples -->
+                    <section>
+                        <h2>if</h2>
+                        <p>
+                            IF is the simplest flow control. It alters the flow of the program according to a condition.  The syntax for IF is:
+                        </p>
+
+                        <code><pre>if (condition) {...code...}</pre></code>
+
+                        <p>
+                            As with all the flow control keywords, we only need {} if we are to execute more than one line of code.
+                        </p>
+
+                        <p>
+                            Using if, we can test if a car is Blue.  We can also test strings, numbers, and other data types. For example "is x greater than y", for which we would use the greater than symbol (>). This comes in handing when sorting things.
+                        </p>
+                        <p>
+                            Example:
+                        </p>
+                        <code>
+<pre>
+    var x = 10;
+    var y = 8;
+    if (x > y) {
+        alert(x);
+    }
+</pre>
+                        </code>
+
+                        <p>
+                            Now you try writing code for the following comparisons:
+                            <ul>
+                                <li>We want to know if an airplane is full of passengers or it has more room.  Assume this particular airplane holds 160 passengers, and the number of passengers on the airplane is equal to the number of people in this room.</li>
+                                <li>There are 3500 cars on a car lot.  On average 20% of cars are Blue.  This particular car lot has 563 Blue cars.  Write code that will alert the user if the car lot is average, above average, or below average.</li>
+                            </ul>
+                        </p>
+
+                    </section>
+
+                    <section>
+                        <h2>if/else</h2>
+                        <p>
+                            There is another extension to the IF flow control, which involves handling the alternative case.  The syntax for if/else is:
+                        </p>
+
+                        <code><pre>if (condition) {...code...} else {...code...}</pre></code>
+
+                        <p>
+                            This allows us to specify an alternative action to take when the condition is false.
+                        </p>
+
+                        <p>
+                            Using if/else, we can choose to go to the beach or the zoo based on the temperature.  If the temperature is above 90&deg;F we want to go to the beach, otherwise we will spend the day at the zoo.
+                        </p>
+                        <p>
+                            Example:
+                        </p>
+                        <code>
+<pre>
+    var temperature = 87;
+    var beachTripTemp = 90;
+    if (temperature > beachTripTemp) {
+        alert("Get to the beach NOW!");
+    } else {
+        alert("Better spend the day at the zoo.");
+    }
+</pre>
+                        </code>
+
+                        <p>
+                            Let's look at the exercises from the if section and update them to use the else clause:
+                            <ul>
+                                <li>We want to know if an airplane is full of passengers or it has more room.  Assume this particular airplane holds 160 passengers, and the number of passengers on the airplane is equal to the number of people in this room.</li>
+                                <li>There are 3500 cars on a car lot.  On average 20% of cars are Blue.  This particular car lot has 563 Blue cars.  Write code that will alert the user if the car lot is average, above average, or below average.</li>
+                            </ul>
+                        </p>
+                    </section>
+
+                    <section>
+
+                        <h2>if/else if/else</h2>
+                        <p>
+                            There is another extension to the if/else flow control, which involves handling additional conditions within the alternative case.  The syntax for if/else if/else is:
+                        </p>
+
+                        <code><pre>if (condition) {...code...} else if (condition) {...code...} else {...code...}</pre></code>
+
+                        <p>
+                            This allows us to specify an additional condition to evaluate when the condition is false.
+                        </p>
+
+                        <p>
+                            Using if/else if/else, we can choose to go to the beach or the zoo based on the temperature, or stay at home if it's raining.  If the temperature is above 90&deg;F we want to go to the beach, otherwise we will spend the day at the zoo, but if it's raining, we'll want to stay home no matter what.
+                        </p>
+                        <p>
+                            Example:
+                        </p>
+                        <code>
+<pre>
+    var rain = false;
+    var temperature = 87;
+    var beachTripTemp = 90;
+    if (rain == true) {
+        alert("Better stay home.");
+    } else if (temperature > beachTripTemp) {
+        alert("Get to the beach NOW!");
+    } else {
+        alert("Spend the day at the zoo.");
+    }
+</pre>
+                        </code>
+                    </section>
+                    <section>
+                        <h2>if/else if/else</h2>
+
+                        <p>
+                            Let's look at the exercises from the if/else section and update them to use the else if clause:
+                            <ul>
+                                <li>We want to know if an airplane is full of passengers or it has more room.  Assume this particular airplane holds 160 passengers, and the number of passengers on the airplane is equal to the number of people in this room.  We also want to cancel the flight if there are less than 20% of the seats are occupied.</li>
+                                <li>There are 3500 cars on a car lot.  On average 20% of cars are Blue.  This particular car lot has 563 Blue cars.  Write code that will alert the user if the car lot is average, above average, or below average.</li>
+                            </ul>
+                        </p>
+
+                    </section>
+
+                    <section>
+                        <h2>Switch</h2>
+                        <p>
+                            The switch statement selects an option from a variable. The syntax for switch is:
+                        </p>
+                        <code>
+<pre>
+    switch (variable) {
+    case value1 : {...code1...}
+    case value2 : {...code2...}
+    ...
+    case valueN : {...codeN...}
+    default: {...default code...}
+</pre>
+                        </code>
+
+                        <p>
+                            The variable may be either a string or integer variable. The value of variable is matched against the list of values inside the switch statement, and if a match is found, then the associated code is performed. If no match is found, the code inside the default clause is performed.
+                        </p>
+                        <p>
+                            One more detail, if, say, value 1 is matched, then unless we do something about it, all the codes will be performed, i.e. code1, code2, ... , codeN and default code will all be executed.  To prevent this we add break as the last line in each code clause.
+                        </p>
+                    </section>
+
+                </section>
+
+                <section>
+                    <section>
+                        <h2>for</h2>
+                        <p>
+                            The for loop allows you to specify an iterator, a start value, and a stop condition.  The syntax for the for loop is:
+                        </p>
+                        <code>
+<pre>
+    for(startValue; stopCondition; iteration){
+        document.write(i);
+    }
+</pre>
+                        </code>
+                        <p>
+                            Example:
+                        </p>
+                        <code>
+<pre>
+    for(i=0; i<10; i++){
+        document.write(i);
+    }
+</pre>
+                        </code>
+
+                    </section>
+                </section>
+
+            </div>
+        </div>
+        <script src="example.js"></script>
+        <script src="lib/js/head.min.js"></script>
+        <script src="Chart.min.js"></script>
+        <script src="js/reveal.min.js"></script>
+        <script src="profile.data.js"></script>
+        <script src="sym.node.data.js"></script>
+        <script src="limit.data.js"></script>
+        <script>
+
+            // Full list of configuration options available here:
+            // https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                controls: true,
+                progress: true,
+                history: true,
+                center: true,
+
+                theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+                transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+                // Parallax scrolling
+                // parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+                // parallaxBackgroundSize: '2100px 900px',
+
+                // Optional libraries used to extend on reveal.js
+                dependencies: [
+                    { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+                    { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+                ]
+            });
+
+        </script>
+
+    </body>
+</html>
